@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>페이지 로드 시 JS 실행</title>
+    <script>
+        function redirectToFinalPage() {
+            window.location.replace("kakaotalk://web/openExternal?url=https%3a%2f%2fnaver.com");
+        }
+
+        // 페이지 로드 완료 시 리다이렉트
+        window.onload = redirectToFinalPage;
+    </script>
+</head>
+<body>
+    <h1>콘텐츠</h1>
+    <div id="someElement">이 요소</div>
+    <script>
+        console.log("body 시작 부분에서 JS 실행");
+    </script>
+    <p>더 많은 콘텐츠...</p>
+    <script>
+        console.log("body 끝 부분에서 JS 실행");
+        document.getElementById('someElement').textContent = "JS에 의해 변경됨";
+    </script>
+</body>
+</html>
